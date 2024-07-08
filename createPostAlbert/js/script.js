@@ -33,3 +33,30 @@ const getPostsApi = async () => {
 };
 
 getPostsApi();
+
+function agregarEtiqueta() {
+  // Obtener el contenido ingresado por el usuario
+  let contenido = document.getElementById("contenidoEtiqueta").value;
+
+  // Validar que el campo no esté vacío
+  if (contenido.trim() === "") {
+    alert("Por favor ingrese contenido para la etiqueta.");
+    return;
+  }
+
+  // Crear un nuevo elemento span
+  let nuevaEtiqueta = document.createElement("span");
+
+  // Configurar el contenido de la etiqueta
+  nuevaEtiqueta.textContent = contenido;
+
+  // Agregar clases, atributos, estilos, etc., según sea necesario
+  nuevaEtiqueta.classList.add("etiqueta"); // Ejemplo de agregar una clase
+
+  // Agregar la etiqueta al contenedor
+  let contenedor = document.getElementById("etiquetasContainer");
+  contenedor.appendChild(nuevaEtiqueta);
+
+  // Limpiar el campo de entrada después de agregar la etiqueta
+  document.getElementById("contenidoEtiqueta").value = "";
+}
